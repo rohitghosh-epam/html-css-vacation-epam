@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky bg-[#303240] text-white flex items-center justify-between">
+        <div class="flex items-center">
+            <img class="h-10 w-40" src="img/vacation.png" alt="">
+            <a href="#" class="h-full w-full px-2 py-3 border-b-2 border-[#009ecc] bg-gray-800">Dashboard</a>
+            <a href="#" class="h-full w-full px-2 py-3 hover:text-gray-300 hover:bg-gray-800">Requests</a>
+            <a href="#" class="h-full w-full px-2 py-3 hover:text-gray-300 hover:bg-gray-800">Balances</a>
+            <a href="#" class="h-full w-full px-2 py-3 hover:text-gray-300 hover:bg-gray-800">Notifications</a>
+        </div>
+        <div class="flex items-center space-x-5 pr-1">
+            <button class="bg-[#009ecc] h-8 hover:bg-[#009ecc] px-4 rounded text-sm">+ Add request</button>
+            <div class="flex space-x-4">
+                <a href=""><img src="img/question.svg" class="w-8 h-8 rounded-full"></a>
+                <img src="img/profile.png" class="w-8 h-8 rounded-full">
+                <a href=""><img src="img/menu.svg" class="w-8 h-8 rounded-full"></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sub-header -->
+    <div class="bg-white px-6 py-2 flex justify-start space-x-4 items-center shadow">
+        <a href=""><div>
+            <span class="h-full py-2 text-[#009ecc] font-semibold border-b-2 border-[#009ecc] hover:pointer">Personal</span>
+        </div></a>
+        <a href=""><div class="text-gray-500 text-sm hover:text-[#009ecc] hover:pointer">Action required <span class="bg-gray-300 px-2 py-1 rounded-full text-black">0</span></div></a>
+    </div>
+
+    <!-- main section  -->
+    <main class="bg-[#F2F3F7] m-5">
+        <div class="flex justify-between p-4">
+            <h2 class="font-bold text-gray-500 text-2xl">Overview</h2>
+            <a href=""><h6 class="text-[#009ECC] hover:text-[#016a8a]">Go to Balances</h6></a>
+        </div>
+        <div class="grid grid-cols-3 h-auto w-auto space-x-4 p-2">
+            <div class="h-52 flex flex-col items-center bg-white shadow-2xl p-2">
+                <div class="flex justify-between w-full p-2">
+                    <h4 class="text-gray-500">Regular vacation</h4>
+                    <img src="img/infoI.svg">
+                </div>
+                <div class="rounded-full border-8 border-[#009ECC] p-2 h-35 w-35 flex flex-col justify-center items-center">
+                    <h1 class="font-bold text-2xl">15d</h1>
+                    <h6 class="text-gray-500">of 15d</h6>
+                </div>
+            </div>
+            <div class="h-52 flex flex-col items-center bg-white shadow-2xl p-2">
+                <div class="flex justify-between w-full p-2">
+                    <h4 class="text-gray-500">Overtime vacation</h4>
+                    <img src="img/infoI.svg">
+                </div>
+                <div class="rounded-full border-8 border-[#f2f3f7] p-2 h-35 w-35 flex flex-col justify-center items-center">
+                    <h1 class="font-bold text-2xl">0h</h1>
+                </div>
+            </div>
+            <div class="h-52 flex flex-col items-center bg-white shadow-2xl p-2">
+                <div class="flex justify-between w-full p-2">
+                    <h4 class="text-gray-500">Sick leave</h4>
+                    <img src="img/infoI.svg">
+                </div>
+                <div class="rounded-full border-8 border-[#009ECC] p-2 h-35 w-35 flex flex-col justify-center items-center">
+                    <h1 class="font-bold text-2xl">6d</h1>
+                    <h6 class="text-gray-500">of 6d</h6>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="flex justify-between p-4">
+            <h2 class="font-bold text-gray-500 text-2xl">My Requests</h2>
+            <a href=""><h6 class="text-[#009ECC] hover:text-[#016a8a]">Go to all Requests</h6></a>
+        </div>
+        <div class="flex flex-col items-center justify-center space-y-4">
+            <img src="img/book.png" alt="No Requests" class="w-80 h-40">
+            <p class="text-black text-center">There are no registered requests.</p>
+        </div>
+
+        <!-- Floating Action Button (with gradient and icon) -->
+        <div class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 to-purple-500 flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9l2 2m0 0l-2 2m2-2H7m4 4l2 2m0 0l-2 2m2-2h6m-6 6l2 2m0 0l-2 2m2-2H5" />
+            </svg>
+        </div>
+
+    </main>
+
+    </body>
+</html>
