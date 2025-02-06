@@ -7,13 +7,16 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="output.css">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link rel="script" href="script.js"> -->
 </head>
 <body class="bg-gray-100">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->    
     <nav class="sticky bg-[#303240] text-white flex items-center justify-between">
-        <div class="flex items-center">
+        <div class="p-2 lg:hidden">
+            <button><img src="img/hamburgerMenu.svg" id="hamburgerMenu" onclick="showmenu()" alt=""></button>
+        </div>
+        <div class="hidden lg:flex lg:items-center">
             <img class="h-10 w-40" src="img/vacation.png" alt="">
             <a href="#" class="h-full w-full px-2 py-3 border-b-2 border-[#009ecc] bg-gray-800">Dashboard</a>
             <a href="#" class="h-full w-full px-2 py-3 hover:text-gray-300 hover:bg-gray-800">Requests</a>
@@ -23,12 +26,19 @@
         <div class="flex items-center space-x-5 pr-1">
             <button class="bg-[#009ecc] h-8 hover:bg-[#009ecc] px-4 rounded text-sm">+ Add request</button>
             <div class="flex space-x-4">
-                <a href=""><img src="img/question.svg" class="w-8 h-8 rounded-full"></a>
-                <img src="img/profile.png" class="w-8 h-8 rounded-full">
+                <a href=""><img src="img/question.svg" class="hidden md:block md:w-8 md:h-8 md:rounded-full"></a>
+                <img src="img/profile.png" class="hidden md:block md:w-8 md:h-8 md:rounded-full">
                 <a href=""><img src="img/menu.svg" class="w-8 h-8 rounded-full"></a>
             </div>
         </div>
     </nav>
+    <div id="side" class="bg-[#303240] h-screen w-xs hidden">
+        <ul class="flex flex-col text-lg p-6 g-5 space-y-4">
+            <li class="hover:text-[#0891C5] text-white"><a href="">Dashboard</a></li>
+            <li class="hover:text-[#0891C5] text-white"><a href="">Requests</a></li>
+            <li class="hover:text-[#0891C5] text-white"><a href="">Balance</a></li>
+        </ul>
+    </div>
 
     <!-- Sub-header -->
     <div class="bg-white px-6 py-2 flex justify-start space-x-4 items-center shadow">
@@ -96,5 +106,19 @@
         </div>
     </main>
 
+    <script>
+        function showmenu (){
+            const showmenu=document.getElementById("side");
+            const image= document.getElementById("hamburgerMenu");
+            if(showmenu.classList.contains("hidden")){
+                showmenu.classList.remove("hidden");
+                image.src="img/cross.svg";
+            }
+            else{
+                showmenu.classList.add("hidden");
+                image.src="img/hamburgerMenu.svg";
+            }    
+        }
+    </script>
     </body>
 </html>
