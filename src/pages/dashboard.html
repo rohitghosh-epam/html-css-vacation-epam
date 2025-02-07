@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacation Dashboard</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <!-- <link rel="script" href="script.js"> -->
 </head>
 <body class="bg-gray-100">
@@ -17,7 +17,7 @@
             <button><img src="img/hamburgerMenu.svg" id="hamburgerMenu" onclick="showmenu()" alt=""></button>
         </div>
         <div class="hidden lg:flex lg:items-center">
-            <img class="h-10 w-40" src="img/vacation.png" alt="">
+            <img class="h-10 w-40" src="../../assets/img/vacation.png" alt="">
             <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle border-b-2 border-[#009ecc] bg-gray-800">Dashboard</a>
             <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle hover:text-gray-300 hover:bg-gray-800">Requests</a>
             <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle hover:text-gray-300 hover:bg-gray-800">Balances</a>
@@ -26,9 +26,9 @@
         <div class="flex items-center space-x-5 pr-1">
             <button class="bg-[#009ecc] h-8 hover:bg-[#009ecc] px-4 rounded text-sm">+ Add request</button>
             <div class="flex space-x-4">
-                <a href=""><img src="img/question.svg" class="hidden md:block md:w-8 md:h-8 md:rounded-full"></a>
-                <img src="img/profile.png" class="hidden md:block md:w-8 md:h-8 md:rounded-full">
-                <a href=""><img src="img/menu.svg" class="w-8 h-8 rounded-full"></a>
+                <a href=""><img src="../../assets/img/question.svg" class="hidden md:block md:w-8 md:h-8 md:rounded-full"></a>
+                <img src="../../assets/img/profile.png" class="hidden md:block md:w-8 md:h-8 md:rounded-full">
+                <a href=""><img src="../../assets/img/menu.svg" class="w-8 h-8 rounded-full"></a>
             </div>
         </div>
     </nav>
@@ -58,7 +58,7 @@
             <div class="h-52 flex flex-col items-center bg-white shadow-2xl p-2">
                 <div class="flex justify-between w-full p-2">
                     <h4 class="text-gray-500">Regular vacation</h4>
-                    <img src="img/infoI.svg">
+                    <img src="../../assets/img/infoI.svg">
                 </div>
                 <div class="rounded-full border-8 border-[#009ECC] p-2 h-35 w-35 flex flex-col justify-center items-center">
                     <h1 class="font-bold text-2xl">15d</h1>
@@ -68,7 +68,7 @@
             <div class="h-52 flex flex-col items-center bg-white shadow-2xl p-2">
                 <div class="flex justify-between w-full p-2">
                     <h4 class="text-gray-500">Overtime vacation</h4>
-                    <img src="img/infoI.svg">
+                    <img src="../../assets/img/infoI.svg">
                 </div>
                 <div class="rounded-full border-8 border-[#f2f3f7] p-2 h-35 w-35 flex flex-col justify-center items-center">
                     <h1 class="font-bold text-2xl">0h</h1>
@@ -77,7 +77,7 @@
             <div class="h-52 flex flex-col items-center bg-white shadow-2xl p-2">
                 <div class="flex justify-between w-full p-2">
                     <h4 class="text-gray-500">Sick leave</h4>
-                    <img src="img/infoI.svg">
+                    <img src="../../assets/img/infoI.svg">
                 </div>
                 <div class="rounded-full border-8 border-[#009ECC] p-2 h-35 w-35 flex flex-col justify-center items-center">
                     <h1 class="font-bold text-2xl">6d</h1>
@@ -92,7 +92,7 @@
             <a href=""><h6 class="text-[#009ECC] hover:text-[#016a8a]">Go to all Requests</h6></a>
         </div>
         <div class="flex flex-col items-center justify-center space-y-4">
-            <img src="img/book.png" alt="No Requests" class="w-80 h-40">
+            <img src="../../assets/img/book.png" alt="No Requests" class="w-80 h-40">
             <p class="text-black text-center">There are no registered requests.</p>
             <div class="flex justify-between w-full max-w-full">
                 <div class="fixed z-100 right-2 bottom-2">

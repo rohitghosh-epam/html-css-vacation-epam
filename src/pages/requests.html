@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Dashboard</title>
+
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/requests.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->    
+    <nav class="top-0 sticky bg-[#303240] text-white flex items-center justify-between">
+        <div class="p-2 lg:hidden">
+            <button><img src="img/hamburgerMenu.svg" id="hamburgerMenu" onclick="showmenu()" alt=""></button>
+        </div>
+        <div class="hidden lg:flex lg:items-center">
+            <img class="h-10 w-40" src="../../assets/img/vacation.png" alt="">
+            <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle hover:bg-gray-800">Dashboard</a>
+            <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle border-b-2 border-[#009ecc] hover:text-gray-300 bg-gray-800">Requests</a>
+            <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle hover:text-gray-300 hover:bg-gray-800">Balances</a>
+            <a href="#" class="h-full w-full px-2 py-3 flex justify-center align-middle hover:text-gray-300 hover:bg-gray-800">Notifications</a>
+        </div>
+        <div class="flex items-center space-x-5 pr-1">
+            <button class="bg-[#009ecc] h-8 hover:bg-[#009ecc] px-4 rounded text-sm">+ Add request</button>
+            <div class="flex space-x-4">
+                <a href=""><img src="../../assets/img/question.svg" class="hidden md:block md:w-8 md:h-8 md:rounded-full"></a>
+                <img src="../../assets/img/profile.png" class="hidden md:block md:w-8 md:h-8 md:rounded-full">
+                <a href=""><img src="../../assets/img/menu.svg" class="w-8 h-8 rounded-full"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="side" class="bg-[#303240] h-screen w-xs hidden">
+        <ul class="flex flex-col text-lg p-6 g-5 space-y-4">
+            <li class="hover:text-[#0891C5] text-white"><a href="">Dashboard</a></li>
+            <li class="hover:text-[#0891C5] text-white"><a href="">Requests</a></li>
+            <li class="hover:text-[#0891C5] text-white"><a href="">Balance</a></li>
+        </ul>
+    </div>
+
+    <header class=" px-3 pt-9 pb-5 flex items-center justify-start gap-10">
+        <div class="flex items-center  bg-white">
+            <button class=" rounded-sm px-2 py-2 text-sm font-semibold border-0 bg-[#009ecc] text-white border-black/20">Leave</button>
+            <button class=" text-black/70 px-2 py-2 text-sm font-semibold border-y-1 border-black/20">Compensation</button>
+            <button class=" text-black/70 rounded-r-xs px-2 py-2 text-sm font-semibold border-1 border-black/20">Extention</button>
+        </div>
+        <div class="flex  bg-white">
+            <button id="prevBtn" class=" text-black/70 rounded-l-xs px-3 py-2 text-sm font-semibold border-1 border-black/20 ">&lt;</button>
+            <div class=" text-black/70 px-1 py-2 text-sm font-semibold border-y-1 border-r-1 border-black/20">
+                <input type="date" id="startDate" value="2024-02-07">
+            </div>
+            <div class=" text-black/70 px-1 py-2 text-sm font-semibold border-y-1 border-black/20">
+                <input type="date" id="endDate" value="2026-02-07">
+            </div>
+            <button id="nextBtn" class=" text-black/70 rounded-l-xs px-3 py-2 text-sm font-semibold border-1 border-black/20">&gt;</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="px-10">
+            <div class="flex flex-col shadow">
+                <div class="bg-white w-full px-4 flex justify-start items-center space-x-5">
+                    <a href=""><div class="py-3 text-[#009ecc] border-b-2 border-[#009ecc] text-xs hover:pointer">All leaves <span class="bg-[#009ecc]  px-2 py-1 rounded-full text-white">10</span></div></a>
+                    <a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">Regular Vacation <span class="bg-gray-300 px-2 py-1 rounded-full text-black">3</span></div></a>
+                    <a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">Sick leave <span class="bg-gray-300 px-2 py-1 rounded-full text-black">3</span></div></a>
+                    <a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">Exceptional leave <span class="bg-gray-300 px-2 py-1 rounded-full text-black">4</span></div></a>
+                    <a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">Leave w/o pay <span class="bg-gray-300 px-2 py-1 rounded-full text-black">0</span></div></a>
+                    <a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">Overtime vacation <span class="bg-gray-300 px-2 py-1 rounded-full text-black">0</span></div></a>
+                    <a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">Extended leave <span class="bg-gray-300 px-2 py-1 rounded-full text-black">0</span></div></a>
+                </div>
+    
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs pl-3">
+                        <tr class="bg-gray-100 pl-3">
+                            <th><a href=""><div class="py-3 pl-6 text-BLACK text-xs hover:text-[#009ecc] hover:pointer">CATEGORY</div></a></th>
+                            <th><a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">REASON </div></a></th>
+                            <th><a href=""><div class="flex flex-row place-items-center gap-0 py-3 pl-6 text-black text-xs hover:text-[#009ecc] hover:pointer">STATUS <img src="../../assets/img/requests/statusArrow.svg" alt=""> </div></a></th>
+                            <th><a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">PERIOD </div></a></th>
+                            <th><a href=""><div class="py-3 text-black text-xs hover:text-[#009ecc] hover:pointer">APPROVER </div></a></th>
+                        </tr>
+                        <tr class="bg-white pl-3">
+                            <td class="py-4 px-5 flex items-center space-x-2">
+                                <span class="text-teal-500 text-lg">➕</span>
+                                <span class="text-gray-400 font-medium">Sick leave</span>
+                            </td>
+                            <td><p class="text-gray-400 py-2">Regular Sick Leave</p></td>
+                            <td class="py-4 px-5">
+                                <span class="flex items-center border-1 text-gray-400 px-3 py-1 rounded-full text-sm font-medium">
+                                    <span class="w-3.5 h-3.5 bg-gray-400 rounded-full mr-2"></span> Closed
+                                </span>
+                            </td>
+                            <td><p class="text-gray-400 py-2">Dec 30,2024 - Dec 31,2024 (2d)</p></td>
+                            <td><p class="text-[#009ecc] py-2">Shanthikumar Chilumala</p></td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <!-- <div class="bg-white space-y-3 p-5">
+                    <div class="flex flex-col items-center justify-center space-y-3">
+                        <img src="../../assets/img/requests/book.png" alt="No Requests" class="w-50 h-40">
+                        <p class="text-black text-center">There are no registered requests.</p>          
+                    </div>
+                    <p class="left-2 bottom-2">Total 0 item.</p>      
+                </div> -->
+                
+    
+                
+            </div>
+        </div>
+    
+        
+        <div class="flex justify-between w-full max-w-full">
+            <div class="fixed z-100 right-2 bottom-2">
+                <div class="w-10 h-10">
+                    <a href=""><img class=" bg-gradient-to-tr from-blue-400 to-purple-500 rounded-[20px] p-2" src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2034%2034%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M21.3822%204.25L22.6667%201.88889L23.9511%204.25C24.4233%205.1%2025.1222%205.79889%2025.9722%206.27111L28.3333%207.55555L25.9722%208.84C25.1222%209.31222%2024.4233%2010.0111%2023.9511%2010.8611L22.6667%2013.2222L21.3822%2010.8611C20.91%2010.0111%2020.2111%209.31222%2019.3611%208.84L17%207.55555L19.3611%206.27111C20.2111%205.79889%2020.91%205.1%2021.3822%204.25Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M21.3822%2023.1389L22.6667%2020.7778L23.9511%2023.1389C24.4233%2023.9889%2025.1222%2024.6878%2025.9722%2025.16L28.3333%2026.4444L25.9722%2027.7289C25.1222%2028.2011%2024.4233%2028.9%2023.9511%2029.75L22.6667%2032.1111L21.3822%2029.75C20.91%2028.9%2020.2111%2028.2011%2019.3611%2027.7289L17%2026.4444L19.3611%2025.16C20.2111%2024.6878%2020.91%2023.9889%2021.3822%2023.1389Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M13.2222%209.44444L11.5033%2012.58C10.88%2013.7133%209.93555%2014.6578%208.80221%2015.2811L5.66666%2017L8.80221%2018.7189C9.93555%2019.3422%2010.88%2020.2867%2011.5033%2021.42L13.2222%2024.5556L14.9411%2021.42C15.5644%2020.2867%2016.5089%2019.3422%2017.6422%2018.7189L20.7778%2017L17.6422%2015.2811C16.5089%2014.6578%2015.5644%2013.7133%2014.9411%2012.58L13.2222%209.44444Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showmenu (){
+            const showmenu=document.getElementById("side");
+            const image= document.getElementById("hamburgerMenu");
+            if(showmenu.classList.contains("hidden")){
+                showmenu.classList.remove("hidden");
+                image.src="img/cross.svg";
+            }
+            else{
+                showmenu.classList.add("hidden");
+                image.src="img/hamburgerMenu.svg";
+            }    
+        }
+    </script>
+    </body>
+</html>
